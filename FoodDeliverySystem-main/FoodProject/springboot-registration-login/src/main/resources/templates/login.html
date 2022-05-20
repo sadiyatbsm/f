@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registration/Login</title>
+	<style type="text/css">
+body{
+background-image:url("/bg.jpeg");
+background-repeat:no-repeat;
+background-size: cover;
+}
+ 
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:black;
+  color:  #ddd;
+}
+
+.topnav a.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+</head>
+
+<body>
+<div class="topnav">
+   <a th:href="@{/login}" class="active">Login</a>
+  <a th:href="@{/about}">About Us</a>
+  <a th:href="@{/}">Register</a>
+  <div class="topnav-right">
+        <a href="#" onclick="alert('Please login to see the cart');">Cart</a>
+
+  </div></div>
+	
+
+	<br>
+	<br>
+
+	<div class = "container">
+		<div class = "row" style="text-align:center;">
+			<div class = "col-md-6 col-md-offset-3">
+ <center><h1>ONLINE FOOD DELIVERY SYSTEM</h1></center>
+  
+				<h1>Login Page</h1><br>
+
+				<form th:action= "@{/login}" method="post">
+
+					<!-- Error message -->
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">Invalid username or password</div>
+					</div><br>
+
+					<!-- Logout message -->
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">You have been logged out.</div>
+					</div>
+<br>
+
+					<div class="form-group">
+						<label class="control-label" for="username"> Username</label>
+						<input type="text" class="form-control" id="username" name="username"
+							placeholder="Enter email ID" autofocus="autofocus" />
+					</div>
+<br>
+					<div class="form-group">
+						<label class="control-label" for="username"> password</label>
+						<input type="password" class="form-control" id="password" name="password"
+							placeholder="Enter password" />
+					</div><br>
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login-submit" id="login-submit"
+									class="form-control btn btn-primary" value="Login" />
+							</div><br>
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+					<span>New User? <a href="/" th:href="@{/registration}">Register
+							here</a></span><br>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

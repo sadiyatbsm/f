@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Home</title>
+		<style type="text/css">
+body{
+background-image:url("/bg.jpeg");
+height:100%;
+background-repeat:no-repeat;
+background-size: cover;
+
+ 
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:black;
+  color:  #ddd;
+}
+
+.topnav a.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+  
+  }
+  *{
+
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+html , body{
+     height: 100%;
+     width: 100%;
+}
+#bt{
+
+    height: 50px;
+    width: 150px;
+    display:inline-block;
+    color:#444;
+    border:1px solid #CCC;
+    background:#DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+    max-width: 100px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+#bt:active {
+    color:red;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+#bt>a{
+    text-decoration: none;
+    color: #444;
+    font-size: 20px;}
+  
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topnav">
+   <a th:href="@{/login}" >Login</a>
+  <a th:href="@{/about}">About Us</a>
+  <div class="topnav-right">
+    <a th:href="@{/login}">LogOut</a>
+    <a th:href="@{/showcart}">Cart</a>
+  </div></div>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			
+					<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><div class="container">
+		
+		<center><br>
+		<h3>Welcome </h3>
+		
+		<span sec:authentication="name"> </span>
+		<div sec:authorize="isAuthenticated()" th:if="${#authentication.name} == 'admin@admin.com'">
+			<h3>(Admin)</h3><br><br><br><br>
+		</div>
+		</center>
+	</div>
+					<center><div id="bt" sec:authorize="isAuthenticated()" th:if="${#authentication.name} == 'admin@admin.com'"><a th:href="@{/home}">Item List </a></div>
+					<div id="bt" sec:authorize="isAuthenticated()" th:if="${#authentication.name} == 'admin@admin.com' ">
+							
+							<a th:href="@{/new}">New Item</a></div><br>
+						<br><br><div id="bt" ><a th:href="@{/customer view}">Menu </a></div>
+						</div>	
+							
+							
+					
+				</ul>
+				
+				<div >
+ </div>
+				
+				
+			</div>
+		
+	</nav>
+
+	<br>
+	<br>
+
+	
+</center>
+
+
+</body>
+
+</html>

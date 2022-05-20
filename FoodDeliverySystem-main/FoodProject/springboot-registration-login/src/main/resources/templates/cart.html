@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Food Menu</title>
+<style type="text/css">
+body{
+background-image:url("/bg.jpeg");
+background-repeat:no-repeat;
+background-size: cover;
+
+ 
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:black;
+  color:  #ddd;
+}
+
+.topnav a.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+  
+}
+#bt{
+
+    height: 50px;
+    width: 150px;
+    display:inline-block;
+    color:#444;
+    border:1px solid #CCC;
+    background:#DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    vertical-align:middle;
+    max-width: 100px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+#bt:active {
+    color:red;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+#bt>a{
+    text-decoration: none;
+    color: #444;
+    font-size: 20px;}
+  
+
+</style>
+</head>
+
+<body>
+
+	<div class="topnav">
+   <a th:href="@{/login}" >Login</a>
+  <a th:href="@{/about}">About Us</a>
+  <a th:href="@{/customer view}">Menu</a>
+  <div class="topnav-right">
+    <a href="@{/login}">LogOut</a>
+    <a th:href="@{/showcart}" class="active">Cart</a>
+  </div></div>
+	
+
+	<br>
+	<br>
+
+	<div class = "container">
+		<div class = "row" style="text-align:center;">
+			<div class = "col-md-6 col-md-offset-3">
+
+
+
+<div align="center">
+		
+				<h1>Cart</h1>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>FoodID</th>
+					<th>FoodName</th>
+					<th>FoodPrice</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="fooditem : ${cartproducts}">
+					<td th:text="${fooditem.id}">FoodID</td>
+					<td th:text="${fooditem.name}">FoodName</td>
+					<td th:text="${fooditem.price}">FoodPrice</td>
+                    
+			</tr>
+			<tr th:each="Total : ${sum}">
+			<td colspan="2">Total</td>
+			<td th:text="${sum}">Total</td></tr>
+	</tbody>
+	</table>
+	
+	</div>
+	<br><br><br>
+	<div id="bt" ><a th:href="@{/customer view}" onclick="alert('Order Placed ,Thank you');">Place Order</a></div>
+
+</body>
+</html>

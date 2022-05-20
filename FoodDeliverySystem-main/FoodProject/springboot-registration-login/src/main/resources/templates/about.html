@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<style type="text/css">
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:black;
+  color:  #ddd;
+}
+
+.topnav a.active {
+  background-color: red;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background-color: #ddd;
+}
+.section{
+  width: 100%;
+  min-height: 100vh;
+
+}
+.container{
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+.content-section{
+  float: left;
+  width: 55%;
+}
+.image-section{
+  float: right;
+  width: 40%;
+}
+.image-section img{
+  margin-top: 80px;
+  width: 100%;
+  height: auto;
+}
+.content-section .title{
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.content-section .content h3{
+  margin-top: 20px;
+  color: #5d5d5d;
+  font-size: 19px;
+}
+.content-section .content p{
+  margin-top: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.content-section .content .button{
+  margin-top: 30px;
+}
+.content-section .content .button a{
+  background-color: #3d3d3d;
+  padding: 12px 40px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 1.5px;
+}
+.content-section .content .button a:hover{
+  background-color: #a52a2a;
+  color: #fff;
+}
+.content-section .social{
+  margin:40px 40px;
+}
+.content-section .social i{
+  color: #a52a2a;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+.content-section .social i:hover{
+  color: #3d3d3d;
+}
+@media screen and (max-width:768px){
+  .container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .content-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .image-section{
+    float: none;
+    width: 100%;
+  }
+  .image-section img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .content-section .title{
+    text-align: center;
+    font-size: 19px;
+  }
+  .content-section .content .button{
+    text-align: center;
+  }
+  .content-section .content .button a{
+    padding: 9px 30px;
+  }
+  .content-section .social{
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+	<div class="topnav">
+   <a th:href="@{/login}" >Login</a>
+  <a th:href="@{/about}" class="active">About Us</a>
+  
+  <div class="topnav-right">
+    <a href="@{/login}">LogOut</a>
+    <a th:href="@{/showcart}">Cart</a>
+  </div></div>
+	
+
+    <div class="section">
+      <div class="container">
+        <div class="content-section">
+          <div class="title">
+            <h1>About us</h1>
+          </div>
+          <div class="content">
+            <h3>Who we are and what we can do</h3>
+            <p> Our technology platform connects customers, restaurant partners and delivery partners, serving their multiple needs. Customers use our platform to search and discover restaurants, read and write customer generated reviews and view and upload photos, order food delivery, book a table and make payments while dining-out at restaurants. On the other hand, we provide restaurant partners with industry-specific marketing tools which enable them to engage and acquire customers to grow their business while also providing a reliable and efficient last mile delivery service. We also operate a one-stop procurement solution
+              </p>
+               
+          </div>
+           <div class="social">
+            <a href="https://www.facebook.com/Cristiano/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/elonmusk"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/leomessi/"><i class="fab fa-instagram"></i></a>
+          </div></div>
+        <div class="image-section">
+          <img src="food.jpg" alt="">
+        </div>
+      </div>
+  </div>
+ 
+
+	<br>
+	<br>
+
+	<div class = "container">
+		<div class = "row" style="text-align:center;">
+			<div class = "col-md-6 col-md-offset-3">
+
+
+
+</body>
+</html>
